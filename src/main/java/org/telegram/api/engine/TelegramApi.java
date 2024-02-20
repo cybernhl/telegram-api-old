@@ -944,6 +944,15 @@ public class TelegramApi {
                         try {
                             long start = System.currentTimeMillis();
                             waitForDc(primaryDc);
+                            //FIXME
+//                            No implementation found for long org.telegram.android.util.NativePQ.solvePq(long) (tried Java_org_telegram_android_util_NativePQ_solvePq and Java_org_telegram_android_util_NativePQ_solvePq__J)
+//                            at org.telegram.android.util.NativePQ.solvePq(Native Method)
+//                            at org.telegram.android.util.NativePQ.findDivider(NativePQ.java:20)
+//                            at org.telegram.mtproto.secure.pq.PQSolver.solvePq(PQSolver.java:16)
+//                            at org.telegram.mtproto.pq.Authorizer.authAttempt(Authorizer.java:94)
+//                            at org.telegram.mtproto.pq.Authorizer.doAuth(Authorizer.java:207)
+//                            at org.telegram.api.engine.TelegramApi$ConnectionThread.waitForDc(TelegramApi.java:880)
+//                            at org.telegram.api.engine.TelegramApi$ConnectionThread.run(TelegramApi.java:946)
                             mainProto = new MTProto(state.getMtProtoState(primaryDc), callback,
                                     new CallWrapper() {
                                         @Override
